@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -16,3 +17,5 @@ class Catagory(models.Model):
         verbose_name = "catagory"
         verbose_name_plural = "catagories"
     
+    def get_absolute_url(self):
+        return reverse('product_by_category', args=[self.slug])
