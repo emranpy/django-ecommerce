@@ -5,3 +5,5 @@ from .models import Catagory
 @admin.register(Catagory)
 class CatagoryAdmin(admin.ModelAdmin):
     list_display = ['id', 'catagory_name']
+    prepopulated_fields = {'slug':['catagory_name']}
+    list_display_links = ['id', 'catagory_name']
